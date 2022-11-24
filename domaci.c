@@ -7,6 +7,8 @@ int main()
 	FILE *fp1, *fp2, *fp3;
 	char *str1, *str2;
 	char sw0, sw1;
+	int i = 0;
+	int j = 0;
 	int diode = 0x01; 
 	char ts1, ts2, ts3, ts4;
 	size_t num_of_bytes = 6;
@@ -65,7 +67,7 @@ int main()
 		else if(ts3 && !ts1 && !ts2 && !ts4)
 			novo = 3;
 		else if(ts4 && !ts1 && !ts2 && !ts3)
-			novo = 3;
+			novo = 4;
 		
 		if(novo != staro && novo != 0){
 			switch(novo) 
@@ -77,17 +79,17 @@ int main()
 					diode = 0x08; 
 					break; 
 				case 2: 
-					for( int i=0; i < x ; i++)
+					for( i=0; i < x ; i++)
 					{
-						diode =>> 1; 
+						diode >>= 1; 
 						if( diode == 0)
 							diode = 0x08;
 					}
 					break; 
 				case 3: 
-					for( int i=0; i < x ; i++)
+					for( j =0; j < x ; j++)
 					{
-						diode =<< 1; 
+						diode <<= 1; 
 						if( diode == 0x10)
 							diode = 0x01;
 					}
