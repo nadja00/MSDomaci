@@ -7,8 +7,7 @@ int main()
 	FILE *fp1, *fp2, *fp3;
 	char *str1, *str2;
 	char sw0, sw1;
-	int i = 0;
-	int j = 0;
+	int i, j;
 	int diode = 0x01; 
 	char ts1, ts2, ts3, ts4;
 	size_t num_of_bytes = 6;
